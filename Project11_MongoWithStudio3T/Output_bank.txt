@@ -1,0 +1,68 @@
+switched to db banking
+{
+	"ok" : 1,
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1656402946, 4),
+		"signature" : {
+			"hash" : BinData(0,"5pBBq0QU4gxna/c8g3T58eqG/04="),
+			"keyId" : NumberLong("7051654920650358787")
+		}
+	},
+	"operationTime" : Timestamp(1656402946, 4)
+}
+{
+	"ok" : 1,
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1656402946, 5),
+		"signature" : {
+			"hash" : BinData(0,"5pBBq0QU4gxna/c8g3T58eqG/04="),
+			"keyId" : NumberLong("7051654920650358787")
+		}
+	},
+	"operationTime" : Timestamp(1656402946, 5)
+}
+{
+	"ok" : 1,
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1656402946, 6),
+		"signature" : {
+			"hash" : BinData(0,"5pBBq0QU4gxna/c8g3T58eqG/04="),
+			"keyId" : NumberLong("7051654920650358787")
+		}
+	},
+	"operationTime" : Timestamp(1656402946, 6)
+}
+admin    0.000GB
+banking  0.000GB
+local    2.102GB
+account
+branch
+customer
+loan
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		"S84920495E",
+		"S58647856E",
+		"S458965895E"
+	]
+}
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		"S84920495E",
+		"S58647856E",
+		"S458965895E"
+	]
+}
+WriteResult({ "nInserted" : 1 })
+WriteResult({ "nInserted" : 1 })
+The find query will be run with Query Assist.
+The find query will be run with Query Assist.
+The find query will be run with Query Assist.
+The find query will be run with Query Assist.
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+{ "acknowledged" : true, "deletedCount" : 1 }
+true
+true
+true
