@@ -1,0 +1,48 @@
+switched to db plants
+{
+	"ok" : 1,
+	"$clusterTime" : {
+		"clusterTime" : Timestamp(1656388699, 1),
+		"signature" : {
+			"hash" : BinData(0,"VJJFqL9NRR4DB6x9CKZUe71XcUA="),
+			"keyId" : NumberLong("7051654920650358787")
+		}
+	},
+	"operationTime" : Timestamp(1656388699, 1)
+}
+admin   0.000GB
+local   2.102GB
+plants  0.000GB
+houseplant
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 1,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 1,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("62ba7c6da6140063598e370d"),
+		ObjectId("62ba7c6da6140063598e370e")
+	]
+}
+The find query will be run with Query Assist.
+The find query will be run with Query Assist.
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+{ "acknowledged" : true, "deletedCount" : 1 }
+true

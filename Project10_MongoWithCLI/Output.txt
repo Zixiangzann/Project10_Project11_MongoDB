@@ -1,0 +1,164 @@
+zixiang@zixiang-IdeaPad-Gaming-3-15ACH6 ~
+ % sudo systemctl status mongod
+● mongod.service - MongoDB Database Server
+     Loaded: loaded (/lib/systemd/system/mongod.service; disabled; vendor preset: enabled)
+     Active: active (running) since Tue 2022-06-28 12:22:56 +08; 42s ago
+       Docs: https://docs.mongodb.org/manual
+   Main PID: 28844 (mongod)
+     Memory: 159.8M
+     CGroup: /system.slice/mongod.service
+             └─28844 /usr/bin/mongod --config /etc/mongod.conf
+
+Jun 28 12:22:56 zixiang-IdeaPad-Gaming-3-15ACH6 systemd[1]: Started MongoDB Database Server.
+zixiang@zixiang-IdeaPad-Gaming-3-15ACH6 ~
+ % mongo
+MongoDB shell version v5.0.9
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("82a048d2-da9f-467e-bc61-b5c5d1d7af6e") }
+MongoDB server version: 5.0.9
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+The server generated these startup warnings when booting: 
+        2022-06-28T12:22:56.097+08:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-06-28T12:22:56.401+08:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> 
+t>//CREATE/USE DB
+heuse plants;
+. A Clivia pswitched to db plants
+> 
+l>//CREATE COLLECTION
+andb.createCollection("houseplant");
+ous plant and should be kept way fr{ "ok" : 1 }
+> o
+> //Check that "plants" db is created
+m show dbs;
+admin   0.000GB
+config  0.000GB
+imdb    0.000GB
+local   0.000GB
+plants  0.000GB
+> 
+m>//check that "houseplant" collection is created
+> show collections;
+houseplant
+> 
+> //CREATE/INSERT Documents to "houseplant" collection (C)
+> 
+a>db.houseplant.insert([{
+...     "About":[{
+...     "name": "Spider Plant",
+...     "Scientific Name": "Chlorophytum comosum",
+...     "Description": "The plant produces grassy-looking, narrow leaves about 8”-10” long and less than 1” wide directly from the center of the plant. When kept root-bound, a spider plant sends out numerous long runners (stems) that produce small, delicate, star- shaped, white flowers. Once the flowers die, baby plants (plantlets) develop and can be easily used for propagation. A spider plant can also be propagated by dividing the fleshy, tuberous, plant roots."
+...     }],
+...     "Care":[{
+...         "Light":"How much light for a spider plant: A spider plant likes medium to bright indirect light. Solid green plants need less light than green and white varieties. No spider plant should ever be put in the direct sun.",
+m...        "Water":"How to water spider plant: How you water is a very important part of how to care for a spider plant. Allow the top 50% of the soil to dry out before you water. A good way to tell when the plant needs water is to look at the leaves. The green color starts to fade when the soil is dry. Using water with a high salt or chemical content (fluorine or chlorine) causes brown leaf tips. Never use water that had passed through a water softener; it is much too salty.",
+...         "Soil":"Best soil for a spider plant: Use a rich, organic plant soil such as an African violet mix."        
+...     }
+...     ]
+... }])
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 1,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> 
+> 
+> //Insert many (C)
+> db.houseplant.insertMany(
+... [
+... {
+...     "About":[{
+...     "name": "Snake Plant",
+...     "Scientific Name": "Sansevieria trifasciata",
+...     "Description": "A Sansevieria plant can be used as a table plant when small, or a stately floor plant as it mature.  The leaves are arranged and grow in a rosette pattern. Sansevieria plants developed hard, leathery leaves to adapt to the dry, arid regions where they were originally found growing. The thick, succulent leaves store water and the thick leaf cuticles help to reduce the loss of moisture. The flowers of a sansevieria  are usually greenish-white and grow atop a long, leafless stem. Flowering usually occurs during the summer or fall."
+...     }],
+...     "Care":[{
+...         "Light":"How much light does a sansevieria need: This plant can be placed anywhere in a room, from the darkest corner to the brightest window. The better the light, the faster a sansevieria plant grows. The more coloration in the leaves, the more light the plant needs.",
+...         "Water":"How to water spider plant: How you water is a very important part of how to care for a spider plant. Allow the top 50% of the soil to dry out before you water. A good way to tell when the plant needs water is to look at the leaves. The green color starts to fade when the soil is dry. Using water with a high salt or chemical content (fluorine or chlorine) causes brown leaf tips. Never use water that had passed through a water softener; it is much too salty.",
+...         "Soil":"Best soil for a sansevieria plant: Use a good, rich, organic soil that drains quickly. If the soil isn't draining well and appears heavy and clay-like, add some builders sand."        
+...     }
+...     ]
+... }
+... ,
+... {
+...     "About":[{
+...     "name": "Cliviaaaaaaaaaaaaaaaaaaaa",
+...     "Scientific Name": "Kaffir Lily",
+...     "Description": "Clivia plants, close relatives of Amaryllis plants, are easy- care almost indestructible flowering plants from South Africa. Named after a Duchess belonging to the Clive family, Clivias have long, thick, dark-green arching leaves growing out of a large plant bulb. The trumpet or lily- shaped flowers are 2″-3″ in size and can be orange, orange/red, yellow, or cream colored. Clivia flowers appear as a dense cluster of 15-20 small blooms at the end of a long stem. Clivia plants bloom for about 4 weeks during the late spring and early summer when the weather is warm and the days are long. A Clivia plant is a very poisonous plant and should be kept way from small children and pets. Read more about common houseplants that can be dangerous in my book Don’t Feed Me to Your Cat: A Guide to Poisonous Houseplants. Clivias are large plants that can grow 2-3 feet tall and almost as wide. Planting a Clivia in a heavy clay or ceramic pot prevents it from tipping over. The older a Clivia plant gets the more beautiful it becomes"
+...     }],
+...     "Care":[{
+...         "Light":"A Clivia plant requires bright, indirect light but no direct sun. Direct sun scorches the leaves and ruins the beautiful flowers. During the summer, a Clivia loves to go outside as long as you keep it in the shade.",
+...         "Water":"During the spring and summer, water well and then allow the top 50% of the soil to dry out before watering again. Reduce your water in the fall; and allow the soil dry out before you water during the winter. Pale green or orange lesions on the leaves indicate you are over-watering.",
+...         "Soil":"Use a fast -draining soil that has a lot of peat moss and some sand in it to prevent the roots of your Clivia plant from staying too wet."        
+...     }
+...     ]
+... }]
+... )
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("62ba825f8f2341c43efbd0dc"),
+		ObjectId("62ba825f8f2341c43efbd0dd")
+	]
+}
+> 
+> 
+> //query (R)
+> db.houseplant.find({})
+{ "_id" : ObjectId("62ba825f8f2341c43efbd0db"), "About" : [ { "name" : "Spider Plant", "Scientific Name" : "Chlorophytum comosum", "Description" : "The plant produces grassy-looking, narrow leaves about 8”-10” long and less than 1” wide directly from the center of the plant. When kept root-bound, a spider plant sends out numerous long runners (stems) that produce small, delicate, star- shaped, white flowers. Once the flowers die, baby plants (plantlets) develop and can be easily used for propagation. A spider plant can also be propagated by dividing the fleshy, tuberous, plant roots." } ], "Care" : [ { "Light" : "How much light for a spider plant: A spider plant likes medium to bright indirect light. Solid green plants need less light than green and white varieties. No spider plant should ever be put in the direct sun.", "Water" : "How to water spider plant: How you water is a very important part of how to care for a spider plant. Allow the top 50% of the soil to dry out before you water. A good way to tell when the plant needs water is to look at the leaves. The green color starts to fade when the soil is dry. Using water with a high salt or chemical content (fluorine or chlorine) causes brown leaf tips. Never use water that had passed through a water softener; it is much too salty.", "Soil" : "Best soil for a spider plant: Use a rich, organic plant soil such as an African violet mix." } ] }
+{ "_id" : ObjectId("62ba825f8f2341c43efbd0dc"), "About" : [ { "name" : "Snake Plant", "Scientific Name" : "Sansevieria trifasciata", "Description" : "A Sansevieria plant can be used as a table plant when small, or a stately floor plant as it mature.  The leaves are arranged and grow in a rosette pattern. Sansevieria plants developed hard, leathery leaves to adapt to the dry, arid regions where they were originally found growing. The thick, succulent leaves store water and the thick leaf cuticles help to reduce the loss of moisture. The flowers of a sansevieria  are usually greenish-white and grow atop a long, leafless stem. Flowering usually occurs during the summer or fall." } ], "Care" : [ { "Light" : "How much light does a sansevieria need: This plant can be placed anywhere in a room, from the darkest corner to the brightest window. The better the light, the faster a sansevieria plant grows. The more coloration in the leaves, the more light the plant needs.", "Water" : "How to water spider plant: How you water is a very important part of how to care for a spider plant. Allow the top 50% of the soil to dry out before you water. A good way to tell when the plant needs water is to look at the leaves. The green color starts to fade when the soil is dry. Using water with a high salt or chemical content (fluorine or chlorine) causes brown leaf tips. Never use water that had passed through a water softener; it is much too salty.", "Soil" : "Best soil for a sansevieria plant: Use a good, rich, organic soil that drains quickly. If the soil isn't draining well and appears heavy and clay-like, add some builders sand." } ] }
+{ "_id" : ObjectId("62ba825f8f2341c43efbd0dd"), "About" : [ { "name" : "Cliviaaaaaaaaaaaaaaaaaaaa", "Scientific Name" : "Kaffir Lily", "Description" : "Clivia plants, close relatives of Amaryllis plants, are easy- care almost indestructible flowering plants from South Africa. Named after a Duchess belonging to the Clive family, Clivias have long, thick, dark-green arching leaves growing out of a large plant bulb. The trumpet or lily- shaped flowers are 2″-3″ in size and can be orange, orange/red, yellow, or cream colored. Clivia flowers appear as a dense cluster of 15-20 small blooms at the end of a long stem. Clivia plants bloom for about 4 weeks during the late spring and early summer when the weather is warm and the days are long. A Clivia plant is a very poisonous plant and should be kept way from small children and pets. Read more about common houseplants that can be dangerous in my book Don’t Feed Me to Your Cat: A Guide to Poisonous Houseplants. Clivias are large plants that can grow 2-3 feet tall and almost as wide. Planting a Clivia in a heavy clay or ceramic pot prevents it from tipping over. The older a Clivia plant gets the more beautiful it becomes" } ], "Care" : [ { "Light" : "A Clivia plant requires bright, indirect light but no direct sun. Direct sun scorches the leaves and ruins the beautiful flowers. During the summer, a Clivia loves to go outside as long as you keep it in the shade.", "Water" : "During the spring and summer, water well and then allow the top 50% of the soil to dry out before watering again. Reduce your water in the fall; and allow the soil dry out before you water during the winter. Pale green or orange lesions on the leaves indicate you are over-watering.", "Soil" : "Use a fast -draining soil that has a lot of peat moss and some sand in it to prevent the roots of your Clivia plant from staying too wet." } ] }
+> db.houseplant.find({"About.name": "Spider Plant"})
+{ "_id" : ObjectId("62ba825f8f2341c43efbd0db"), "About" : [ { "name" : "Spider Plant", "Scientific Name" : "Chlorophytum comosum", "Description" : "The plant produces grassy-looking, narrow leaves about 8”-10” long and less than 1” wide directly from the center of the plant. When kept root-bound, a spider plant sends out numerous long runners (stems) that produce small, delicate, star- shaped, white flowers. Once the flowers die, baby plants (plantlets) develop and can be easily used for propagation. A spider plant can also be propagated by dividing the fleshy, tuberous, plant roots." } ], "Care" : [ { "Light" : "How much light for a spider plant: A spider plant likes medium to bright indirect light. Solid green plants need less light than green and white varieties. No spider plant should ever be put in the direct sun.", "Water" : "How to water spider plant: How you water is a very important part of how to care for a spider plant. Allow the top 50% of the soil to dry out before you water. A good way to tell when the plant needs water is to look at the leaves. The green color starts to fade when the soil is dry. Using water with a high salt or chemical content (fluorine or chlorine) causes brown leaf tips. Never use water that had passed through a water softener; it is much too salty.", "Soil" : "Best soil for a spider plant: Use a rich, organic plant soil such as an African violet mix." } ] }
+> 
+> //update by Scientific name to fix the typo in "name". Clivia. (U)
+> db.houseplant.updateOne(
+... {
+...     "About.Scientific Name": "Kaffir Lily"
+...     },
+... {
+...     $set:{"About.$.name": "Clivia"}
+...     }
+... )
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> 
+> 
+> //delete document by id (D). delete the extra(duplicated)
+> db.houseplant.deleteOne({
+...     "_id" : ObjectId("62ba7c64a6140063598e370c")}
+... )
+{ "acknowledged" : true, "deletedCount" : 0 }
+> 
+> //drop db.. byee bye (D)
+> db.houseplant.drop()
+true
